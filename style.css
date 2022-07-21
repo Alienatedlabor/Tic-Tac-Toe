@@ -3,3 +3,34 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+.board-card {
+  width: 800px;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 60vh;
+}
+.board-box {
+  max-width: 800px;
+  min-width: 600px;
+  border: solid;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.grid {
+  display: grid;
+  text-align: center;
+  align-items: center;
+}
