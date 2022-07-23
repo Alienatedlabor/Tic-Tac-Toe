@@ -9,24 +9,29 @@
   </head>
   <body>
     <h1>Tic-Tac-Toe</h1>
+    <div class="player-select">
+      <button class="player-select-btn">X</button>
+      <button class="player-select-btn">O</button>
+    </div>
     <div class="board-card">
       <div class="board-box">
-        <button data-value="1" class="grid">1X</button>
-        <button data-value="2" class="grid">2X</button>
-        <button data-value="3" class="grid">3X</button>
-        <button data-value="4" class="grid">4X</button>
-        <button data-value="5" class="grid">5X</button>
-        <button data-value="6" class="grid">6X</button>
-        <button data-value="7" class="grid">7X</button>
-        <button data-value="8" class="grid">8X</button>
-        <button data-value="9" class="grid">9X</button>
+        <button data-index="0" class="grid bottom right">0</button>
+        <button data-index="1" class="grid bottom right">1</button>
+        <button data-index="2" class="grid bottom">2</button>
+        <button data-index="3" class="grid bottom right">3</button>
+        <button data-index="4" class="grid bottom right">4</button>
+        <button data-index="5" class="grid bottom">5</button>
+        <button data-index="6" class="grid right">6</button>
+        <button data-index="7" class="grid right">7</button>
+        <button data-index="8" class="grid">8</button>
       </div>
     </div>
     <div class="HUD">
       <div class="score">Score will display here:</div>
-      <button class="new-game">NEW GAME</button>
-      <button>X</button>
-      <button>O</button>
+      <div class="score">X WINS!</div>
+      <div>
+        <button class="new-game">NEW GAME</button>
+      </div>
     </div>
   </body>
 </html>

@@ -3,27 +3,64 @@
   padding: 0;
   box-sizing: border-box;
 }
+/*color palette: 
+--blue-sapphire: #05668dff;
+--metallic-seaweed: #028090ff;
+--persian-green: #00a896ff;
+--mountain-meadow: #02c39aff;
+--pale-spring-bud: #f0f3bdff;
+*/
 body {
   display: flex;
   flex-direction: column;
+  background-color: #05668dff;
+}
+button {
+  cursor: pointer;
 }
 h1 {
   display: flex;
   justify-content: center;
+  color: #f0f3bdff;
+}
+.player-select {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.player-select-btn {
+  padding: 20px 40px;
+  background-color: #00a896;
+  color: #f0f3bdff;
+  border: none;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: 0.15s;
+}
+.player-select-btn:hover {
+  opacity: 80%;
+}
+.player-select-btn:active {
+  box-shadow: none;
 }
 .board-card {
   width: 800px;
-  border: solid;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  margin-bottom: 20px;
   height: 60vh;
+  background-color: #02c39aff;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .board-box {
   max-width: 800px;
   min-width: 600px;
-  border: solid;
   height: 50vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -33,4 +70,50 @@ h1 {
   display: grid;
   text-align: center;
   align-items: center;
+  background-color: unset;
+  border: none;
+  color: #f0f3bdff;
+  font-weight: bold;
+  font-size: 90px;
+}
+.grid:hover {
+  background-color: #00a896ff;
+}
+.grid:active {
+  opacity: 80%;
+  box-shadow: #007a6e 3px 3px 6px 0px inset, #007a6e -3px -3px 6px 1px inset;
+}
+.bottom {
+  border-bottom: 4px solid;
+}
+.right {
+  border-right: solid;
+}
+.bottom,
+.right {
+  border-color: #028090ff;
+}
+.HUD {
+  display: flex;
+  font-size: x-large;
+  color: #f0f3bdff;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+}
+.new-game {
+  padding: 8px 16px;
+  border-radius: 21px;
+  border: none;
+  background-color: #00a896;
+  color: #f0f3bdff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: 0.2s;
+}
+.new-game:hover {
+  opacity: 80%;
+}
+.new-game:active {
+  box-shadow: none;
 }
