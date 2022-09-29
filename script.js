@@ -20,22 +20,6 @@ const gameboard = () => {
   })();
 };
 
-const player = (function () {
-  let xMarker = document.querySelector('#X');
-  let oMarker = document.querySelector('#O');
-
-  let playerMarker = xMarker.id;
-  xMarker.addEventListener('click', () => {
-    playerMarker = xMarker.id;
-  });
-
-  oMarker.addEventListener('click', () => {
-    playerMarker = oMarker.id;
-  });
-
-  return playerMarker;
-})();
-
 console.log(player.playerMarker);
 // need index of array and on click change value of array and innertext of grid square to playermarker.id
 
@@ -54,3 +38,25 @@ const winCon = [
   [2, 4, 6],
 ];
 // view (updating board display), game (keeping track of which grid squares are full, turn, and win con), player(keeping track of X or O?)
+
+//interesting way of checking winners and tie that I saw:
+function checkWinXCell() {
+  return winningConditions.some((combination) => {
+    return combination.every((i) => {
+      return cells[i].innerText === 'X';
+    });
+  });
+}
+function checkWinOCell() {
+  return winningConditions.some((combination) => {
+    return combination.every((i) => {
+      return cells[i].innerText === 'O';
+    });
+  });
+}
+function isTieCell() {
+  return cells.every((cell) => {
+    return cell.innerText === 'X' || cell.innerText === 'O';
+  });
+}
+//winning conditions is the above array comboes
