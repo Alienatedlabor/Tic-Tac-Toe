@@ -23,7 +23,7 @@ h1 {
   justify-content: center;
   color: #f0f3bdff;
 }
-label {
+/* label {
   color: #f0f3bdff;
   display: flex;
   flex-direction: column;
@@ -52,8 +52,7 @@ label {
   opacity: 80%;
 }
 .player-select-btn:active {
-  box-shadow: none;
-}
+  box-shadow: none; }*/
 .board-card {
   width: 800px;
   display: flex;
