@@ -39,3 +39,19 @@ const GAMEBOARD = (() => {
     console.log(playerMarker);
   }
 })();
+
+function getMarker(XTURN) {
+  if ((XTURN = true)) {
+    markX();
+  } else markO();
+}
+function markX() {
+  boardArray[this.dataset.index].textContent = 'X';
+  XTURN = false;
+  return XTURN;
+}
+function markY() {
+  boardArray[this.dataset.index].textContent = 'O';
+  XTURN = true;
+  return XTURN;
+}
