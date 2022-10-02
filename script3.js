@@ -1,57 +1,28 @@
 //gameboard module//
 
 const GAMEBOARD = (() => {
+  //new game selector and event
+  let newGame = document.querySelector('.new-game');
+  newGame.addEventListener('click', resetBoard());
+  //board array
   let cellList = document.querySelectorAll('.grid');
   let boardArray = Array.from(cellList);
-  console.log(boardArray);
-
-  const player = (function () {
-    //won't switch turns, not sure about equivalencies, doesn't export playermarker the way I intended.
-
-    function getPlayerTurn() {
-      let playerMarker;
-      let XTURN = true;
-
-      if ((XTURN = true)) {
-        playerMarker = 'X';
-        return playerMarker;
-      } else XTURN = false;
-
-      if ((XTURN = false)) {
-        playerMarker = 'O';
-        return playerMarker;
-      }
-      return playerMarker;
-    }
-    return getPlayerTurn;
-  })();
+  let XTURN = true;
 
   for (let i = 0; i < boardArray.length; i++) {
-    boardArray[i].addEventListener('click', player.getPlayerTurn);
-    boardArray[i].addEventListener('click', markBoard, { once: true });
-    // maybe a turn switch event which just checks whether xturn is true or false and negates it
+    boardArray[i].addEventListener(
+      'click',
+      function () {
+        //takes a cell, checks if it's X turn and if so writes X, if not O.
+        boardArray[this.dataset.index].textContent = XTURN ? 'X' : 'O';
+        XTURN = !XTURN;
+      },
+      { once: true }
+    );
   }
-
-  function markBoard(playerMarker) {
-    boardArray[
-      this.dataset.index
-    ].textContent = `${player.getPlayerTurn.playerMarker}`;
-    console.log(playerMarker);
+  function resetBoard() {
+    for (let i = 0; i < boardArray.length; i++) {
+      boardArray[i].textContent = '';
+    }
   }
 })();
-
-function getMarker(XTURN) {
-  if ((XTURN = true)) {
-    markX();
-  } else markO();
-}
-function markX() {
-  boardArray[this.dataset.index].textContent = 'X';
-  XTURN = false;
-  return XTURN;
-}
-function markY() {
-  boardArray[this.dataset.index].textContent = 'O';
-  XTURN = true;
-  return XTURN;
-}
