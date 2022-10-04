@@ -1,13 +1,12 @@
 //gameboard module//
 
 const GAMEBOARD = (() => {
-  //new game selector and event
-  let newGame = document.querySelector('.new-game');
-  newGame.addEventListener('click', resetBoard());
   //board array
   let cellList = document.querySelectorAll('.grid');
   let boardArray = Array.from(cellList);
+  console.log(boardArray);
   let XTURN = true;
+  //new game selector and event
 
   for (let i = 0; i < boardArray.length; i++) {
     boardArray[i].addEventListener(
@@ -20,9 +19,18 @@ const GAMEBOARD = (() => {
       { once: true }
     );
   }
+  let newGame = document.querySelector('.new-game');
+  console.log(newGame);
+  newGame.addEventListener('click', resetBoard);
   function resetBoard() {
     for (let i = 0; i < boardArray.length; i++) {
-      boardArray[i].textContent = '';
+      // boardArray[i].textContent = '';
+      /*text content would clear but  because we have our click event that places x or O set to only run once per cell, we couldn't mark
+      cells that had been previously clicked after resetBoard ran.
+      location reload might not be optimal for slower internet connections but it works fine for now. 
+      */
+      location.reload();
+      console.log(boardArray);
     }
   }
 })();
